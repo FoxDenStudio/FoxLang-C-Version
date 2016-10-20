@@ -7,7 +7,6 @@
 
 #include <string>
 #include "TokenType.h"
-#include "SymbolToken.h"
 
 namespace Lexer {
     namespace Tokens {

@@ -5,6 +5,7 @@
 #include "Lexer.h"
 #include "Tokens/NumberToken.h"
 #include "Tokens/OperatorToken.h"
+#include "Tokens/SymbolToken.h"
 
 namespace Lexer {
     using namespace Tokens;
@@ -83,7 +84,7 @@ namespace Lexer {
             this->advance();
         }
         if (this->currentChar != '\0' && this->currentChar == '.') {
-            std::string resultStringPost{this->currentChar};
+            std::string resultStringPost{};
             this->advance();
 
             while (this->currentChar != '\0' && isdigit(this->currentChar)) {
@@ -199,5 +200,4 @@ namespace Lexer {
         }
         return new SymbolToken{Tokens::TokenType::_EOF_};
     }
-}
 }

@@ -19,12 +19,16 @@ namespace Lexer {
 
         std::string NumberToken::toString() {
             std::string ret{};
-            return ret
+            ret
                     .append("NumberToken{")
-                    .append(std::string{(char) this->pre})
-                    .append(".")
-                    .append(std::string{(char) this->post})
-                    .append("}");
+                    .append(std::to_string(this->pre));
+            if (this->decimal) {
+                ret
+                        .append(".")
+                        .append(std::to_string(this->post));
+            }
+            ret.append("}");
+            return ret;
         }
     }
 }

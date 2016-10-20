@@ -17,10 +17,11 @@ namespace Lexer {
 
             ~NumberToken();
 
+            virtual std::string toString();
+
         private:
             const bool decimal;
             int pre, post;
-
         };
     }
 }
