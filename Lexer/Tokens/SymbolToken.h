@@ -16,6 +16,8 @@ namespace Lexer {
 
             virtual ~SymbolToken();
 
+            virtual std::string toString() override;
+
         private:
             const TokenType tokenType;
         };

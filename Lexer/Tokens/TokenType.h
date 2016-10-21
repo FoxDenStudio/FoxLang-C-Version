@@ -5,40 +5,43 @@
 #ifndef FOXLANG_TOKENTYPE_H
 #define FOXLANG_TOKENTYPE_H
 
-
-#include "Devsi.h"
-
 namespace Lexer {
     namespace Tokens {
         enum TokenType {
-            _EOF_ = Devsi::OTHER,
-            START = Devsi::CONTROL,
-            FINISH = Devsi::CONTROL,
-            TILDA = Devsi::CONTROL,
-            SEMICOLON = Devsi::CONTROL,
-            ASSIGN = Devsi::CONTROL,
-            SCRIPT = Devsi::CONTROL,
-            DELETEMEM = Devsi::CONTROL,
+            _EOF_ = -1,
+            _NULL_ = 0,
 
-            VARIABLE = Devsi::CONTROL,
-            IDENTIFICATION = Devsi::CONTROL,
-            LPAR = Devsi::OTHER,
-            RPAR = Devsi::OTHER,
-            COLON = Devsi::OTHER,
-            COMMA = Devsi::OTHER,
+            START = 21,
+            FINISH = 22,
+            TILDA = 23,
+            SEMICOLON = 24,
+            ASSIGN = 25,
+            SCRIPT = 26,
+            DELETEMEM = 27,
 
-            NUMBER = Devsi::DATA,
+            VARIABLES = 28,
+            IDENTIFICATION = 29,
+            LPAR = 30,
+            RPAR = 31,
+            COLON = 32,
+            COMMA = 33,
 
-            PLUS = Devsi::SECONDARY_OP,
-            MINUS = Devsi::SECONDARY_OP,
+            NUMBER = 34,
 
-            MULTIPLY = Devsi::PRIMARY_OP,
-            DIVIDE = Devsi::PRIMARY_OP,
-            MODULO = Devsi::PRIMARY_OP,
-            POWER = Devsi::PRIMARY_OP,
-            SQRT = Devsi::PRIMARY_OP,
-            _NULL_ = Devsi::OTHER
+            PLUS = 35,
+            MINUS = 36,
 
+            MULTIPLY = 37,
+            DIVIDE = 38,
+            MODULO = 39,
+            POWER = 40,
+            SQRT = 41,
+            BINDING = 42,
+
+            SET = 43,
+            BLOCK = 44,
+            AT = 45,
+            TO = 46
         };
     }
 }

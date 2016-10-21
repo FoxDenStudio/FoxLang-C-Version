@@ -15,9 +15,9 @@ namespace Lexer {
         public:
             NumberToken(const int pre, const int post);
 
-            ~NumberToken();
+            virtual ~NumberToken();
 
-            virtual std::string toString();
+            virtual std::string toString() override;
 
         private:
             const bool decimal;

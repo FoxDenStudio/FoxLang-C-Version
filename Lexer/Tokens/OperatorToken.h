@@ -13,9 +13,11 @@ namespace Lexer {
         public:
             OperatorToken(TokenType tokenType);
 
-            ~OperatorToken();
+            virtual ~OperatorToken();
 
             const TokenType getOperator();
+
+            virtual std::string toString() override;
 
         private:
             const TokenType operatorT;

@@ -6,14 +6,22 @@
 
 namespace Lexer {
     namespace Tokens {
-        SymbolToken::SymbolToken(const TokenType tokenType) : tokenType(tokenType), IdentificationToken(tokenType,
-                                                                                                        Token::typeToString(
-                                                                                                                tokenType)) {
+        SymbolToken::SymbolToken(const TokenType tokenType) : tokenType(tokenType), IdentificationToken(tokenType, Token::typeToString(tokenType)) {
 
         }
 
         SymbolToken::~SymbolToken() {
 
         }
+
+        std::string SymbolToken::toString() {
+            std::string ret{};
+            ret
+                    .append("SymbolToken{")
+                    .append(std::to_string(this->tokenType))
+                    .append("}");
+            return ret;
+        }
+
     }
 }

@@ -6,10 +6,13 @@
 #define FOXLANG_LEXER_H
 
 #include <iostream>
+#include <unordered_map>
 #include "Tokens/Token.h"
+#include "Tokens/SymbolToken.h"
 
 namespace Lexer {
     using namespace Tokens;
+
     class Lexer {
     public:
         Lexer(const std::string input);
@@ -46,12 +49,16 @@ namespace Lexer {
 
         Token *identification();
 
+        Token *binding();
+
         const std::string inputText;
         char currentChar;
         Token *currentToken;
         unsigned long currentPosition;
         unsigned long currentLine;
         unsigned long currentLinePosition;
+
+        std::unordered_map <std::string, Token> RESERVED_KEYWORDS{};
     };
 }
 

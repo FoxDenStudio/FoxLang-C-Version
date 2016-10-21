@@ -6,13 +6,11 @@
 
 namespace Lexer {
     namespace Tokens {
-        IdentificationToken::IdentificationToken(const std::string name) : name(name),
-                                                                           Token(TokenType::IDENTIFICATION) {
+        IdentificationToken::IdentificationToken(const std::string name) : name(name), Token(TokenType::IDENTIFICATION) {
 
         }
 
-        IdentificationToken::IdentificationToken(const TokenType tokenType, const std::string name) : name(name),
-                                                                                                      Token(tokenType) {
+        IdentificationToken::IdentificationToken(const TokenType tokenType, const std::string name) : name(name), Token(tokenType) {
 
         }
 
@@ -24,5 +22,15 @@ namespace Lexer {
         const std::string IdentificationToken::getName() {
             return name;
         }
+
+        std::string IdentificationToken::toString() {
+            std::string ret{};
+            ret
+                    .append("IdentificationToken{")
+                    .append(this->name)
+                    .append("}");
+            return ret;
+        }
+
     }
 }

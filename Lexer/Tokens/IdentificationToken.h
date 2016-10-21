@@ -15,9 +15,11 @@ namespace Lexer {
 
             IdentificationToken(const TokenType symbol, const std::string name);
 
-            ~IdentificationToken();
+            virtual ~IdentificationToken();
 
             const std::string getName();
+
+            virtual std::string toString() override ;
 
         private:
             const std::string name;

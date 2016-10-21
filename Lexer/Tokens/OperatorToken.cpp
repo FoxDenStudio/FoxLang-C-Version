@@ -6,8 +6,7 @@
 
 namespace Lexer {
     namespace Tokens {
-        OperatorToken::OperatorToken(const TokenType tokenType) : Token(tokenType),
-                                                                  operatorT(tokenType) {}
+        OperatorToken::OperatorToken(const TokenType tokenType) : Token(tokenType), operatorT(tokenType) {}
 
         OperatorToken::~OperatorToken() {
 
@@ -16,5 +15,15 @@ namespace Lexer {
         const TokenType OperatorToken::getOperator() {
             return operatorT;
         }
+
+        std::string OperatorToken::toString() {
+            std::string ret{};
+            ret
+                    .append("OperatorToken{")
+                    .append(std::to_string(this->operatorT))
+                    .append("}");
+            return ret;
+        }
+
     }
 }

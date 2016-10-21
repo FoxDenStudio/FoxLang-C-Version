@@ -20,15 +20,16 @@ namespace Lexer {
         }
 
         const bool Token::isVariableType(TokenType tokenType) {
-            return tokenType == Devsi::DATA;
+            return tokenType == NUMBER;
         }
 
         const bool Token::isPrimaryMathOperator(TokenType tokenType) {
-            return tokenType == Devsi::PRIMARY_OP;
+            return tokenType == MULTIPLY || tokenType == DIVIDE || tokenType == MODULO || tokenType == POWER ||
+                   tokenType == SQRT;
         }
 
         const bool Token::isSecondaryMathOperator(TokenType tokenType) {
-            return tokenType == Devsi::SECONDARY_OP;
+            return tokenType == PLUS || tokenType == MINUS;
         }
 
         const TokenType Token::getTokenType() {
